@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: rgb(235, 229, 229);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        div{
+           display: flex;
+           padding: 50px;
+           margin: 20px;
+           border-radius: 15px;
+           flex-direction: column;
+           justify-content: center;
+           align-items: center;
+           background-color: white;
+        }
+        div h1{
+            font-size: 40px;
+        }
+        input{
+            display: block;
+            width: 100%;
+            margin: 10px;
+            padding: 10px 20px 10px 20px;
+            border-radius: 5px;
+            border: 2px solid black;
+            background-color: rgb(246, 232, 232);
+            font-size: large;
+        }
+        button{
+            /* width: 100%; */
+            padding: 10px 80px 10px 80px;
+            border-radius: 10px;
+            background-color: rgb(11, 11, 83);
+            color: white;
+            border: 3px solid rgb(11, 11, 83);
+            transition: all 0.5s ease-in-out;
+            font-size: 15px;
+            border-radius: 10px;
+        }
+        button:hover{
+            background-color: transparent;
+            color: black;
+        }
+    </style>
+    <title>SignUp</title>
+</head>
+<body>
+    <div>
+        <h1>SignUP</h1>
+        <input type="text" id="username" placeholder="Enter Username">
+        <input type="email" id="email" placeholder="Enter email">
+        <input type="password" id="password" placeholder="Enter password">
+        <button id="signup" onclick="signupFun()">SignUp</button>
+    </div>
+</body>
+<script type="module" src="script.js"></script>
+</html>
