@@ -27,15 +27,14 @@ window.signupFun = function() {
     createUserWithEmailAndPassword(auth, email, password)
       .then((res) => {
         const user = res.user;
-        console.log(user.uid);
+        // console.log(user.uid);
         
-        // Save the user data (username and email) to Firebase Realtime Database
         set(ref(database, `User/${user.uid}`), {
           username: username,
           email: email,
         })
           .then(() => {
-            window.location.href = "login.html"; // Redirect to login page
+            window.location.href = "login.html";
             username = "";
             email = "";
             password = "";
@@ -59,7 +58,7 @@ window.signupFun = function() {
 onAuthStateChanged(auth , (user) => {
   if(user){
   let uid = user.uid;
-  console.log(user.email);
+  // console.log(user.email);
    
   displayTodo(uid)
   window.add = function() {
@@ -81,11 +80,8 @@ onAuthStateChanged(auth , (user) => {
   else{
     alert('Please Enter Todo');
   }
-    
   }
-   
-
-  } 
+} 
   else{
     console.log('No user is logged in.');
     
@@ -93,7 +89,7 @@ onAuthStateChanged(auth , (user) => {
 })
 
 function displayTodo(uid){
-   console.log(uid);
+  //  console.log(uid);
 
    let dataRef = ref(database , `User/${uid}/Todos`);
    let ol = document.getElementById('ol');
